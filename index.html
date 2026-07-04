@@ -1,215 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1397827668782508');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1397827668782508&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trade Finder</title>
+<title>AKKI BHAI ONLINE KHAIWAL</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
-  --bg: linear-gradient(135deg, #020617, #0f172a);
-  --green: #00ff9d;
-  --green2: #00ffa6;
-  --card: rgba(255,255,255,0.05);
+:root{
+  --bg:#050505;
+  --yellow:#ffe600;
+  --green:#00ff88;
+  --red:#ff3b3b;
+  --white:#ffffff;
+  --card:#0d0d0d;
 }
 
-* {
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: var(--bg);
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+body{
   min-height:100vh;
-  padding:20px;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:white;
+  position:relative;
 }
 
-.container {
-  max-width:420px;
+/* GRID BACKGROUND */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:
+  linear-gradient(rgba(255,230,0,0.06) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,230,0,0.06) 1px, transparent 1px);
+
+  background-size:35px 35px;
+
+  pointer-events:none;
+  z-index:-2;
+}
+
+/* VIGNETTE GLOW */
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+  radial-gradient(circle at center,
+  transparent 20%,
+  rgba(0,0,0,0.75) 100%);
+
+  z-index:-1;
+}
+
+/* MAIN CONTAINER */
+
+.container{
   width:100%;
+  max-width:520px;
+  margin:auto;
+  padding:25px 18px 50px;
+
+  animation:fadeUp 1s ease;
 }
 
-/* CARD */
-.card {
-  background: var(--card);
-  backdrop-filter: blur(15px);
-  border-radius:20px;
-  padding:25px;
+/* PROFILE */
+
+.profile{
   text-align:center;
-  box-shadow: 0 0 25px rgba(0,255,157,0.1);
-  animation: fadeUp 1s ease;
+  margin-top:20px;
 }
 
-/* IMAGE */
-.profile {
-  width:120px;
-  height:120px;
-  border-radius:20px;
+/* ======================== */
+/* CHANGE IMAGE HERE 🔥 */
+/* ======================== */
+
+/*
+Replace image link below
+with your own logo/image
+*/
+
+.profile-img-wrap{
+  width:145px;
+  height:145px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  padding:5px;
+
+  background:
+  linear-gradient(135deg,var(--yellow),var(--green));
+
+  box-shadow:
+  0 0 20px rgba(255,230,0,0.6),
+  0 0 45px rgba(0,255,136,0.35);
+
+  animation:pulse 2.5s infinite;
+}
+
+.profile-img{
+  width:100%;
+  height:100%;
   object-fit:cover;
-  border:3px solid var(--green);
-  box-shadow: 0 0 15px var(--green);
-  margin-bottom:10px;
+
+  border-radius:50%;
+
+  border:4px solid rgba(0,255,136,0.9);
 }
 
-/* 🔥 LIVE DOT */
-.live-status {
+.title{
+  margin-top:22px;
+
+  font-size:30px;
+  line-height:1.3;
+  font-weight:800;
+
+  color:var(--yellow);
+
+  text-transform:uppercase;
+
+  text-shadow:
+  0 0 10px rgba(255,230,0,0.8),
+  0 0 25px rgba(255,230,0,0.5);
+}
+
+/* MEMBERS */
+
+.members{
+  margin-top:22px;
+
+  text-align:center;
+
+  font-size:18px;
+  font-weight:600;
+
+  color:var(--yellow);
+
+  text-shadow:
+  0 0 10px rgba(255,230,0,0.7);
+}
+
+/* BADGES */
+
+.badges{
+  margin-top:28px;
+
+  display:flex;
+  gap:14px;
+}
+
+.badge{
+  flex:1;
+
+  padding:14px 10px;
+
+  border-radius:50px;
+
+  text-align:center;
+
+  font-size:13px;
+  font-weight:600;
+
+  background:#111;
+
+  transition:0.35s ease;
+}
+
+.badge:hover{
+  transform:translateY(-4px);
+}
+
+.badge.green{
+  border:1px solid rgba(0,255,136,0.8);
+
+  box-shadow:
+  0 0 12px rgba(0,255,136,0.35);
+}
+
+.badge.red{
+  border:1px solid rgba(255,59,59,0.8);
+
+  box-shadow:
+  0 0 12px rgba(255,59,59,0.35);
+}
+
+/* FEATURE BOXES */
+
+.features{
+  margin-top:28px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:12px;
+}
+
+.feature-box{
+  background:var(--card);
+
+  border-radius:18px;
+
+  padding:18px 12px;
+
+  text-align:center;
+
+  border:1px solid rgba(0,255,136,0.3);
+
+  box-shadow:
+  0 0 15px rgba(0,255,136,0.12);
+
+  transition:0.35s ease;
+}
+
+.feature-box:hover{
+  transform:translateY(-6px);
+}
+
+.feature-box h3{
+  color:var(--yellow);
+
+  font-size:18px;
+  font-weight:700;
+}
+
+.feature-box p{
+  margin-top:8px;
+
+  color:#d8d8d8;
+
+  font-size:12px;
+  line-height:1.5;
+}
+
+/* TELEGRAM BUTTON */
+
+.telegram-btn-wrap{
+  margin-top:34px;
+}
+
+.telegram-btn{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:8px;
-  margin-bottom:10px;
-  font-size:13px;
-}
 
-.dot {
-  width:10px;
-  height:10px;
-  background:#00ff9d;
-  border-radius:50%;
-  box-shadow:0 0 10px #00ff9d;
-  animation:pulse 1.5s infinite;
-}
+  text-align:center;
 
-@keyframes pulse {
-  0% { transform:scale(1); opacity:1; }
-  50% { transform:scale(1.5); opacity:0.6; }
-  100% { transform:scale(1); opacity:1; }
-}
+  width:100%;
 
-/* TITLE */
-.title {
-  color: var(--green);
+  padding:18px 20px;
+
+  border-radius:60px;
+
+  text-decoration:none;
+
+  color:white;
+
   font-weight:700;
+
+  background:
+  linear-gradient(135deg,var(--green),var(--red));
+
+  box-shadow:
+  0 0 18px rgba(0,255,136,0.35),
+  0 0 35px rgba(255,59,59,0.2);
+
+  transition:0.35s ease;
+}
+
+/* ============================== */
+/* CHANGE TELEGRAM LINK HERE 🔥 */
+/* ============================== */
+
+/*
+Replace # below
+with your Telegram link
+
+Example:
+https://t.me/yourchannel
+*/
+
+.telegram-btn:hover{
+  transform:scale(1.04);
+
+  box-shadow:
+  0 0 25px rgba(0,255,136,0.6),
+  0 0 45px rgba(255,59,59,0.4);
+}
+
+/* TRUST PANEL */
+
+.trust-panel{
+  margin-top:34px;
+
+  background:#0d0d0d;
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,230,0,0.25);
+
+  box-shadow:
+  0 0 18px rgba(255,230,0,0.12);
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  overflow:hidden;
+}
+
+.trust-item{
+  padding:20px 10px;
+
+  text-align:center;
+
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.trust-item:last-child{
+  border-right:none;
+}
+
+.trust-icon{
   font-size:24px;
+
+  margin-bottom:8px;
+
+  filter:
+  drop-shadow(0 0 8px rgba(255,230,0,0.8));
 }
 
-/* BADGE */
-.badge {
-  display:inline-block;
-  padding:6px 15px;
-  background: rgba(0,255,157,0.1);
-  border-radius:20px;
-  margin:10px 0;
+.trust-item p{
+  font-size:13px;
+  color:var(--yellow);
+  font-weight:600;
 }
 
-/* SMALL BUTTONS */
-.small-btns {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:10px;
+/* FOOTER */
+
+.footer{
+  margin-top:38px;
+
+  text-align:center;
 }
 
-.small-btn {
-  padding:6px 12px;
-  border-radius:20px;
-  background: rgba(255,255,255,0.08);
+.footer-text{
+  line-height:1.8;
+
+  color:rgba(255,255,255,0.7);
+
+  font-size:14px;
+}
+
+.copyright{
+  margin-top:18px;
+
+  color:rgba(255,255,255,0.45);
+
   font-size:12px;
 }
 
-/* COUNTER */
-.counter {
-  margin-top:12px;
-  font-size:14px;
-  color:#00ff9d;
-  font-weight:600;
-  text-shadow:0 0 10px #00ff9d;
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-/* BUTTON */
-.main-btn {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  margin:20px 0;
-  padding:15px;
-  border-radius:50px;
-  background: linear-gradient(90deg, var(--green), var(--green2));
-  color:black;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-  box-shadow:0 0 20px rgba(0,255,157,0.4);
+@keyframes pulse{
+  0%{
+    box-shadow:
+    0 0 15px rgba(255,230,0,0.5),
+    0 0 35px rgba(0,255,136,0.2);
+  }
+
+  50%{
+    box-shadow:
+    0 0 28px rgba(255,230,0,0.9),
+    0 0 55px rgba(0,255,136,0.5);
+  }
+
+  100%{
+    box-shadow:
+    0 0 15px rgba(255,230,0,0.5),
+    0 0 35px rgba(0,255,136,0.2);
+  }
 }
 
-.main-btn:hover {
-  transform:scale(1.05);
-}
+/* MOBILE */
 
-/* FEATURES */
-.feature {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  background: var(--card);
-  border-radius:15px;
-  padding:12px;
-  margin:10px 0;
-  border:1px solid rgba(0,255,157,0.2);
-  transition:0.3s;
-}
+@media(max-width:520px){
 
-.feature:hover {
-  transform:translateY(-5px);
-}
+  .title{
+    font-size:25px;
+  }
 
-/* CTA */
-.cta {
-  background: linear-gradient(135deg, #00ff9d, #00c97a);
-  color:black;
-  padding:20px;
-  border-radius:20px;
-  margin-top:20px;
-  text-align:center;
-  box-shadow:0 0 20px rgba(0,255,157,0.5);
-}
+  .features{
+    grid-template-columns:1fr;
+  }
 
-.cta-btn {
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  border-radius:30px;
-  background:white;
-  color:black;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
+  .trust-panel{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.cta-btn:hover {
-  transform:scale(1.05);
-}
+  .badges{
+    flex-direction:column;
+  }
 
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
 }
 
 </style>
@@ -219,62 +435,122 @@ body {
 
 <div class="container">
 
-  <div class="card">
+  <!-- PROFILE -->
 
-    <!-- IMAGE -->
-    <img src="logo.png" class="profile">
+  <div class="profile">
 
-    <!-- 🔥 LIVE STATUS -->
-    <div class="live-status">
-      <div class="dot"></div>
-      <span>Live Now</span>
+    <div class="profile-img-wrap">
+
+      <!-- CHANGE IMAGE HERE -->
+
+      <img
+        src="https://i.imgur.com/8Km9tLL.png"
+        class="profile-img"
+        alt="logo"
+      >
+
     </div>
 
-    <!-- TITLE -->
-    <div class="title">NAVJOT BRAR</div>
+    <h1 class="title">
+      AKKI BHAI <br>
+      ONLINE KHAIWAL
+    </h1>
 
-    <!-- NAME -->
-    <div class="badge">👤 snow</div>
+  </div>
 
-    <div>✓ Trusted by thousands of traders</div>
+  <!-- MEMBERS -->
 
-    <div class="small-btns">
-      <div class="small-btn">24/7 Updates</div>
-      <div class="small-btn">Free to Join</div>
+  <div class="members">
+    👥 5000K+ Active Members
+  </div>
+
+  <!-- BADGES -->
+
+  <div class="badges">
+
+    <div class="badge green">
+      🏆 जोड़ी 10 का 1000/-
     </div>
 
-    <!-- COUNTER -->
-    <div class="counter">
-      🔥 <span id="count">1243</span> people joined today
+    <div class="badge red">
+      ⚡ हररफ 100 का 1000/-
     </div>
 
   </div>
 
-  <!-- BUTTON -->
-  <a href="" class="main-btn">Join on Telegram</a>
+  <!-- FEATURE BOXES -->
 
-  <!-- FEATURES -->
-  <div class="feature">📊 <div>Market Insights & Analysis</div></div>
-  <div class="feature">📚 <div>Learn Trading</div></div>
-  <div class="feature">⚡ <div>Tips & Tricks</div></div>
+  <div class="features">
 
-  <!-- CTA -->
-  <div class="cta">
-    ⭐ Stay Ahead with Knowledge ⭐<br>
-    Join now and never miss profitable updates 🚀
-    <br>
-    <a href="https://t.me/+PYxuCi77tBpjMmI1" class="cta-btn">🚀 Join Telegram Channel</a>
+    <div class="feature-box">
+      <h3>10 मिनट में</h3>
+      <p>तुरन्त पेमेंट क्लियर</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>100%</h3>
+      <p>सेफ ग्रुप</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>7 साल से</h3>
+      <p>सेवा में</p>
+    </div>
+
+  </div>
+
+  <!-- TELEGRAM BUTTON -->
+
+  <div class="telegram-btn-wrap">
+
+    <a href="#" class="telegram-btn">
+      ✈️ अभी टेलीग्राम ग्रुप जॉइन करे
+    </a>
+
+  </div>
+
+  <!-- TRUST PANEL -->
+
+  <div class="trust-panel">
+
+    <div class="trust-item">
+      <div class="trust-icon">✅</div>
+      <p>Verified</p>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">🔒</div>
+      <p>सेफ</p>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">📈</div>
+      <p>फास्ट</p>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">⭐</div>
+      <p>Top Rated</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+
+    <div class="footer-text">
+      7 साल से आपकी सेवा में हाजिर <br>
+      बड़े से बड़ा पेमेंट 10 मिनट में हिसाब क्लियर
+    </div>
+
+    <div class="copyright">
+      © 2011 Akki Bhai All Rights Reserved
+    </div>
+
   </div>
 
 </div>
-
-<script>
-let count = 1243;
-setInterval(() => {
-  count += Math.floor(Math.random() * 3) + 1;
-  document.getElementById("count").innerText = count;
-}, 2000);
-</script>
 
 </body>
 </html>
